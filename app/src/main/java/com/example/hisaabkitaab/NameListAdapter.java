@@ -1,6 +1,7 @@
 package com.example.hisaabkitaab;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,14 +28,20 @@ public class NameListAdapter extends ArrayAdapter<hisaab> {
         View cv = inflater.inflate(R.layout.name_list_view,parent,false);
 
         TextView tvName = (TextView) cv.findViewById(R.id.tvNLName);
-        tvName.setText(values.get(position).getName());
+
 
         TextView tvAmt = (TextView) cv.findViewById(R.id.tvNLAmount);
+        tvAmt.setText(String.valueOf(values.get(position).getMoney()));
+        if(values.get(position).getMoney()<0){
+            tvAmt.setTextColor(Color.parseColor("#ff0000"));
+        }
+        else if(values.get(position).getMoney()>0)
+            tvAmt.setTextColor(Color.parseColor("#61C561"));
+        tvName.setText(values.get(position).getName());
 
 
 
 
-
-        return super.getView(position, convertView, parent);
+        return cv;
     }
 }

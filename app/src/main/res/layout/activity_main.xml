@@ -36,6 +36,14 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tvMainMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="No Hisaab Kitaab "
+        android:textSize="18sp" />
+
     <ListView
         android:id="@+id/lvName"
         android:layout_width="match_parent"
